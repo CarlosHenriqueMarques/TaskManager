@@ -6,4 +6,7 @@ public class TaskComment
     public string Texto { get; set; }
     public string Usuario { get; set; }
     public DateTime Data { get; set; }
+    public Guid TarefaId { get; set; } 
+
+    public TaskItem Tarefa { get; set; } = null!;
 }

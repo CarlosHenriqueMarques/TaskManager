@@ -10,6 +10,10 @@ public class TaskItem
     public DateTime DataVencimento { get; set; }
     public Enum.TaskStatus Status { get; set; }
     public TaskPriority Prioridade { get; set; }
+
+    public Guid ProjetoId { get; set; }      
+    public Project Projeto { get; set; }
+
     public List<TaskHistory> Historico { get; set; } = new();
     public List<TaskComment> Comentarios { get; set; } = new();
 }
