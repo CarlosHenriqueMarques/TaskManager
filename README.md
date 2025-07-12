@@ -36,8 +36,8 @@ Esta API permite criar projetos, adicionar tarefas a projetos, atualizar tarefas
 
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/seu-usuario/taskmanager-api.git
-   cd taskmanager-api
+   git clone https://github.com/CarlosHenriqueMarques/TaskManager.git
+   cd TaskManager
    ```
 
 2. Restore pacotes NuGet:  
