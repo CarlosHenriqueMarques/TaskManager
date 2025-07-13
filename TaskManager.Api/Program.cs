@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// InMemory
 builder.Services.AddDbContext<TaskDbContext>(opt =>
     opt.UseInMemoryDatabase("TaskDb"));
 
@@ -23,7 +22,6 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 var app = builder.Build();
 
-// Corrigido: habilita Swagger e UI
 app.UseSwagger();
 app.UseSwaggerUI();
 
