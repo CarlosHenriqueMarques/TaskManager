@@ -1,4 +1,6 @@
-# TaskManager
+
+# TaskManager API
+
 API RESTful para gerenciamento de projetos e tarefas, desenvolvida com .NET 7 Minimal API e Entity Framework Core.
 
 ---
@@ -36,8 +38,8 @@ Esta API permite criar projetos, adicionar tarefas a projetos, atualizar tarefas
 
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/CarlosHenriqueMarques/TaskManager.git
-   cd TaskManager
+   git clone https://github.com/seu-usuario/taskmanager-api.git
+   cd taskmanager-api
    ```
 
 2. Restore pacotes NuGet:  
@@ -67,7 +69,7 @@ A API estará disponível por padrão em `http://localhost:5000` (ou outra porta
 
 2. Rodar container:  
    ```bash
-   docker run -p 5000:80 taskmanager-api
+   docker run -p 5000:5000 taskmanager-api
    ```
 
 3. Acesse a API em: `http://localhost:5000`
@@ -111,3 +113,27 @@ dotnet test
 ```
 
 Os testes cobrem criação, listagem, atualização, exclusão de tarefas e projetos, e verificam o histórico de alterações.
+
+
+## Refinamento e Perguntas ao Product Owner
+
+Para futuras implementações e melhorias, seguem algumas dúvidas e pontos a esclarecer com o PO:
+
+- Devemos suportar múltiplos usuários e permissões por projeto/tarefa?
+- Qual o nível esperado de auditoria e rastreamento de alterações? Devemos armazenar versões completas das tarefas?
+- Existe necessidade de integração com outras ferramentas (ex: calendários, sistemas externos)?
+- O sistema deverá escalar para múltiplos clientes ou será usado internamente?
+- Existe previsão para suporte a outras linguagens, internacionalização ou personalização?
+
+
+## Pontos de Melhoria e Visão para o Projeto
+
+Algumas sugestões para evoluir e profissionalizar o projeto:
+
+- **Persistência**: Migrar de banco InMemory para banco relacional (SQL Server, PostgreSQL) com migrações EF Core.
+- **Autenticação e Autorização**: Implementar Identity para controle de acesso, suporte a múltiplos usuários e permissões. (Se futuramente for um requisito)
+- **API**: Adicionar versionamento da API para facilitar manutenção futura.
+- **Logs e Monitoramento**: Integrar logs estruturados, tracing distribuído e monitoramento de desempenho.
+- **Deploy e Infraestrutura**: Automatizar deploy com CI/CD, considerar orquestração com Kubernetes e uso de cloud (Azure, AWS).
+- **Escalabilidade**: Preparar para escalabilidade horizontal, caching e otimização de consultas. (Se futuramente for um requisito/necessario)
+- **Internacionalização**: Suporte a múltiplos idiomas para alcance global. (Se futuramente for um requisito)
